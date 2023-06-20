@@ -12,10 +12,10 @@ namespace Appoiment_API.Data.Models
         [Required]
         public int Med_id { get; set; }
         [Required]
-        [Column(TypeName = "Date"), DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
-        [DataType(DataType.Date)]
-        public DateTime Date { get; set; }
-        public int Especiality_id { get; set; }
+        // [Column(TypeName = "Date"), DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
+        // [DataType(DataType.Date)]
+        public int Date_id { get; set; }
+        public int Speciality_id { get; set; }
         public int Cost { get; set; }  
 
         
