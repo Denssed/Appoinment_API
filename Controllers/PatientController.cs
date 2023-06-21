@@ -15,11 +15,25 @@ namespace Appoiment_API.Controllers
         {
             _context = context;
         }
-        //Get api/UserController
+        //Get api/PatientController
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patient>>> GetUsers()
         {
             return await _context.Patients.ToListAsync();
+        }
+
+        //Get api/PatientController/:id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Patient>> GetAppoiment(int id)
+        {
+            var patient = await _context.Patients.FindAsync(id);
+
+            if (patient == null)
+            {
+                return NotFound();
+            }
+
+            return patient;
         }
     }
 }

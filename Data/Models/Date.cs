@@ -8,7 +8,7 @@ namespace Appoiment_API.Data.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [Column(TypeName = "Date"), DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
+        [Column(TypeName = "Date"), DisplayFormat(DataFormatString = "{dd/MM/yyyy/hh:mm}")]
         [DataType(DataType.Date)]
         public DateTime Date_Appoiment { get; set; }
 
