@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Appoiment_API.Data.Models
 {
-    public class Patient
+    public class User
     {
         [Key]
         public int Id { get; set; }
@@ -19,9 +19,10 @@ namespace Appoiment_API.Data.Models
         [Column(TypeName = "nvarchar(40)")]
         public string Email { get; set; }
         public string Password { get; set; }
-        [Required]
         public int Age { get; set; }
+        [Column(TypeName = "nvarchar(40)")]
+        public int Speciality_id { get; set; }
         [Required]
-        public int Role_id { get; set; }
+        public string Role { get; set; }
     }
 }

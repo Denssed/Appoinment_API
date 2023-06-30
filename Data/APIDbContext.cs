@@ -13,8 +13,8 @@ namespace Appoiment_API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Patient>().HasData(
-                new Patient
+            modelBuilder.Entity<User>().HasData(
+                new User
                 {
                     Id = 1,
                     Ci = 0991234567,
@@ -23,49 +23,36 @@ namespace Appoiment_API.Data
                     Email = "W.Shake@gmail.com",
                     Password = "password",
                     Age = 30,
-                    Role_id = 3,
+                    Speciality_id = 0,
+                    Role = "patient",
                 }
             );
-            modelBuilder.Entity<Med>().HasData(
-                new Med
+            modelBuilder.Entity<User>().HasData(
+                new User
                 {
-                    Id = 1,
+                    Id = 2,
                     Ci = 0994749304,
                     Name = "Frank",
                     SurName = "Campos",
                     Email = "F.Campos@gmail.com",
                     Password = "password",
                     Speciality_id = 1,
-                    Role_id = 2,
+                    Age = 30,
+                    Role = "med",
                 }
             );
-            modelBuilder.Entity<Admin>().HasData(
-               new Admin
+            modelBuilder.Entity<User>().HasData(
+               new User
                {
-                   Id = 1,
+                   Id = 3,
                    Ci = 0934985782,
                    Name = "Carlos",
                    SurName = "Celeste",
                    Email = "C.Celeste@gmail.com",
                    Password = "password",
-                   Role_id = 1,
-               }
-           );
-           modelBuilder.Entity<Role>().HasData(
-               new Role
-               {
-                   Id = 1,
-                   Name = "Admin"
-               },
-               new Admin
-               {
-                   Id = 2,
-                   Name = "Med"
-               },
-               new Admin
-               {
-                   Id = 3,
-                   Name = "Patient"
+                   Speciality_id = 0,
+                   Age = 30,
+                   Role = "admin",
                }
            );
            modelBuilder.Entity<Speciality>().HasData(
@@ -139,11 +126,8 @@ namespace Appoiment_API.Data
            );
         }
 
-        public DbSet<Patient> Patients { get; set; }
-        public DbSet<Med> Meds { get; set; }
-        public DbSet<Admin> Admins { get; set; }
+        public DbSet<User> Users{ get; set; }
         public DbSet<Appoiment> Appoiments { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
 
 

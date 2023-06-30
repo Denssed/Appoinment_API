@@ -18,9 +18,9 @@ namespace Appoiment_API.Controllers
 
         //Get api/MedsController/
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Med>>> GetMeds()
+        public async Task<ActionResult<IEnumerable<User>>> GetMeds()
         {
-            return await _context.Meds.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
     }
 }
