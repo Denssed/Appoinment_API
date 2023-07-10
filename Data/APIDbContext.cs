@@ -1,5 +1,6 @@
 ﻿using Appoiment_API.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Appoiment_API.Data
 {
@@ -111,17 +112,9 @@ namespace Appoiment_API.Data
                     Id = 1,
                     Patient_id = 1,
                     Med_id = 1,
-                    Date_id = 1,
+                    Date_timeStamp = "1689001200",
                     Speciality_id = 2,
                     Cost = 60,
-                }
-           );
-            modelBuilder.Entity<Date>().HasData(
-                new Date
-                {
-                    Id = 1,
-                    Date_Appoiment = DateTime.Now,
-                   
                 }
            );
         }
