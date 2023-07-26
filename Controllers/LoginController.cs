@@ -43,7 +43,7 @@ namespace Authenticator.Controllers
         {
             var currentUser = _context.Users.FirstOrDefault(
                 user => user.Email.ToLower() == userLogin.Email.ToLower()
-                && user.Password == userLogin.Password
+                && user.Password.ToLower() == userLogin.Password.ToLower()
                 ) ;
             if (currentUser != null) {
                 return currentUser;
