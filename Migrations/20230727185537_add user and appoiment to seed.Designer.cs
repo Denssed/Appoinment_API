@@ -3,6 +3,7 @@ using Appoiment_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appoiment_API.Migrations
 {
     [DbContext(typeof(APIDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230727185537_add user and appoiment to seed")]
+    partial class adduserandappoimenttoseed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,8 +34,9 @@ namespace Appoiment_API.Migrations
                     b.Property<int>("Cost")
                         .HasColumnType("int");
 
-                    b.Property<double>("Date_timeStamp")
-                        .HasColumnType("float");
+                    b.Property<string>("Date_timeStamp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<int>("Med_id")
                         .HasColumnType("int");
@@ -53,7 +56,7 @@ namespace Appoiment_API.Migrations
                         {
                             Id = 1,
                             Cost = 60,
-                            Date_timeStamp = 1689001200.0,
+                            Date_timeStamp = "1689001200",
                             Med_id = 2,
                             Patient_id = 1,
                             Speciality_id = 2
@@ -62,7 +65,7 @@ namespace Appoiment_API.Migrations
                         {
                             Id = 2,
                             Cost = 70,
-                            Date_timeStamp = 1689001300.0,
+                            Date_timeStamp = "1689001300",
                             Med_id = 2,
                             Patient_id = 1,
                             Speciality_id = 2
@@ -71,7 +74,7 @@ namespace Appoiment_API.Migrations
                         {
                             Id = 3,
                             Cost = 80,
-                            Date_timeStamp = 1689001300.0,
+                            Date_timeStamp = "1689001300",
                             Med_id = 2,
                             Patient_id = 1,
                             Speciality_id = 2
@@ -80,7 +83,7 @@ namespace Appoiment_API.Migrations
                         {
                             Id = 4,
                             Cost = 60,
-                            Date_timeStamp = 1689001300.0,
+                            Date_timeStamp = "1689001300",
                             Med_id = 2,
                             Patient_id = 4,
                             Speciality_id = 2
@@ -89,16 +92,7 @@ namespace Appoiment_API.Migrations
                         {
                             Id = 5,
                             Cost = 600,
-                            Date_timeStamp = 1689001300.0,
-                            Med_id = 2,
-                            Patient_id = 4,
-                            Speciality_id = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Cost = 10,
-                            Date_timeStamp = 1689001300.0,
+                            Date_timeStamp = "1689001300",
                             Med_id = 2,
                             Patient_id = 4,
                             Speciality_id = 2

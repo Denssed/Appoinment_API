@@ -9,7 +9,7 @@ namespace Appoiment_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = ("patient"))]
+    //[Authorize(Roles = ("patient"))]
     public class PatientController : Controller
     {
         private readonly APIDbContext _context;

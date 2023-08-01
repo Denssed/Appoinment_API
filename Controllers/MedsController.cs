@@ -22,5 +22,20 @@ namespace Appoiment_API.Controllers
         {
             return await _context.Users.ToListAsync();
         }
+
+        //Get api/MedsController/:id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetMedById(int id)
+        {
+            var med = await _context.Users.FindAsync();
+
+            if (med == null)
+            {
+                return NotFound();
+            }
+
+            return med;
+        }
     }
+
 }
