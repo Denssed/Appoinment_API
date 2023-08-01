@@ -1,5 +1,6 @@
 ﻿using Appoiment_API.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System;
 
 namespace Appoiment_API.Data
@@ -26,10 +27,7 @@ namespace Appoiment_API.Data
                     Age = 30,
                     Speciality_id = 0,
                     Role = "patient",
-                }
-            );
-            modelBuilder.Entity<User>().HasData(
-                new User
+                }, new User
                 {
                     Id = 2,
                     Ci = 0994749304,
@@ -40,22 +38,32 @@ namespace Appoiment_API.Data
                     Speciality_id = 1,
                     Age = 30,
                     Role = "med",
-                }
+                },
+                 new User
+                 {
+                     Id = 3,
+                     Ci = 0934985782,
+                     Name = "Carlos",
+                     SurName = "Celeste",
+                     Email = "C.Celeste@gmail.com",
+                     Password = "password",
+                     Speciality_id = 0,
+                     Age = 30,
+                     Role = "admin",
+                 }, new User
+                 {
+                     Id = 4,
+                     Ci = 0934985785,
+                     Name = "Sebastion",
+                     SurName = "Ramos",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "password",
+                     Speciality_id = 0,
+                     Age = 30,
+                     Role = "patient",
+                 }
+
             );
-            modelBuilder.Entity<User>().HasData(
-               new User
-               {
-                   Id = 3,
-                   Ci = 0934985782,
-                   Name = "Carlos",
-                   SurName = "Celeste",
-                   Email = "C.Celeste@gmail.com",
-                   Password = "password",
-                   Speciality_id = 0,
-                   Age = 30,
-                   Role = "admin",
-               }
-           );
            modelBuilder.Entity<Speciality>().HasData(
                 new Speciality
                 {
@@ -111,10 +119,55 @@ namespace Appoiment_API.Data
                 {
                     Id = 1,
                     Patient_id = 1,
-                    Med_id = 1,
-                    Date_timeStamp = "1689001200",
+                    Med_id = 2,
+                    Date_timeStamp = 1689001200,
                     Speciality_id = 2,
                     Cost = 60,
+                },
+                new Appoiment
+                {
+                    Id = 2,
+                    Patient_id = 1,
+                    Med_id = 2,
+                    Date_timeStamp = 1689001300,
+                    Speciality_id = 2,
+                    Cost = 70,
+                },
+                new Appoiment
+                {
+                    Id = 3,
+                    Patient_id = 1,
+                    Med_id = 2,
+                    Date_timeStamp = 1689001300,
+                    Speciality_id = 2,
+                    Cost = 80,
+                },
+                new Appoiment
+                {
+                    Id = 4,
+                    Patient_id = 4,
+                    Med_id = 2,
+                    Date_timeStamp = 1689001300,
+                    Speciality_id = 2,
+                    Cost = 60,
+                },
+                new Appoiment
+                {
+                    Id = 5,
+                    Patient_id = 4,
+                    Med_id = 2,
+                    Date_timeStamp = 1689001300,
+                    Speciality_id = 2,
+                    Cost = 600,
+                },
+                new Appoiment
+                {
+                    Id = 6,
+                    Patient_id = 4,
+                    Med_id = 2,
+                    Date_timeStamp = 1689001300,
+                    Speciality_id = 2,
+                    Cost = 10,
                 }
            );
         }

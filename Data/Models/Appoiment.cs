@@ -12,8 +12,7 @@ namespace Appoiment_API.Data.Models
         [Required]
         public int Med_id { get; set; }
         [Required]
-        [Column(TypeName = "nvarchar(10)")]
-        public string Date_timeStamp { get; set; }
+        public double Date_timeStamp { get; set; }
         public int Speciality_id { get; set; }
         public int Cost { get; set; }  
 

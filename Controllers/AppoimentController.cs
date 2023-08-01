@@ -2,6 +2,9 @@
 using Appoiment_API.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.OpenApi.Any;
+using System.Collections.Immutable;
 
 namespace Appoiment_API.Controllers
 {
@@ -10,6 +13,7 @@ namespace Appoiment_API.Controllers
     public class AppoimentController : Controller
     {
         private readonly APIDbContext _context;
+        private List<Ticket> tickets = new List<Ticket>();
 
         public AppoimentController(APIDbContext context)
         {
@@ -23,18 +27,33 @@ namespace Appoiment_API.Controllers
             return await _context.Appoiments.ToListAsync();
         }
 
-        //Get api/AppoimentController/:id
+        //Get api/PatientController/:id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Appoiment>> GetAppoiment(int id)
+        public async Task<ActionResult<IEnumerable<Ticket>>> GetTicket(int id)
         {
-            var appoiment = await _context.Appoiments.FindAsync(id);
-
-            if (appoiment == null)
+            var appoiments = await _context.Appoiments.ToListAsync();
+            var filter = appoiments.Where(p => p.Patient_id == id).ToArray();
+            foreach (var appmt in appoiments)
             {
-                return NotFound();
+                if (appmt.Patient_id == id)
+                {
+                    var med = await _context.Users.FindAsync(appmt.Med_id);
+                    var patient = await _context.Users.FindAsync(appmt.Patient_id);
+                    var speciality = await _context.Specialities.FindAsync(appmt.Speciality_id);
+                    Ticket memory = new Ticket { };
+                    memory!.Med = med.Name;
+                    memory!.Patient = patient.Name;
+                    memory!.Speciality = speciality.Name;
+                    memory!.Cost = appmt.Cost;
+                    System.DateTime dat_Time = new System.DateTime(1965, 1, 1, 0, 0, 0, 0);
+                    dat_Time = dat_Time.AddSeconds(appmt.Date_timeStamp);
+                    string date = dat_Time.ToShortDateString() + " " + dat_Time.ToShortTimeString();
+                    System.Console.WriteLine(date);
+                    memory!.Date = date;
+                    tickets.Add(memory);
+                }
             }
-
-            return appoiment;
+                return tickets;
         }
 
         [HttpPost]
