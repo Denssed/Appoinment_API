@@ -27,6 +27,18 @@ namespace Appoiment_API.Controllers
             return await _context.Appoiments.ToListAsync();
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Appoiment>> GetAppoiment(int  id)
+        {
+            var appoimnet =  await _context.Appoiments.FindAsync(id);
+            if (appoimnet == null)
+            {
+                return NotFound();
+            }
+
+            return appoimnet;
+        }
+
         //Get api/PatientController/:id
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Ticket>>> GetTicket(int id)
@@ -62,7 +74,7 @@ namespace Appoiment_API.Controllers
             _context.Appoiments.Add(appoiment);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = appoiment.Id }, appoiment);
+            return CreatedAtAction("GetAppoiment", new { id = appoiment.Id }, appoiment);
         }
 
         [HttpPut("{id}")]
