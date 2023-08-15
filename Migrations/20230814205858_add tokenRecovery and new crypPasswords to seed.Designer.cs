@@ -3,6 +3,7 @@ using Appoiment_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appoiment_API.Migrations
 {
     [DbContext(typeof(APIDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230814205858_add tokenRecovery and new crypPasswords to seed")]
+    partial class addtokenRecoveryandnewcrypPasswordstoseed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,6 +215,10 @@ namespace Appoiment_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(40)");
 
+                    b.Property<string>("TokenRecovery")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -223,12 +229,13 @@ namespace Appoiment_API.Migrations
                             Id = 1,
                             Age = 30,
                             Ci = 991234567,
-                            Email = "rodriguezp.jeremy@gmail.com",
-                            Name = "Jeremy",
+                            Email = "W.Shake@gmail.com",
+                            Name = "William",
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "patient",
                             Speciality_id = "0",
-                            SurName = "Rodriguez"
+                            SurName = "Shakespeare",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -240,7 +247,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "1",
-                            SurName = "Campos"
+                            SurName = "Campos",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -252,7 +260,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "admin",
                             Speciality_id = "1",
-                            SurName = "Celeste"
+                            SurName = "Celeste",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -264,7 +273,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "patient",
                             Speciality_id = "2",
-                            SurName = "Ramos"
+                            SurName = "Ramos",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -276,7 +286,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "2",
-                            SurName = "Ramos"
+                            SurName = "Ramos",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -288,7 +299,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "3",
-                            SurName = "Collantes"
+                            SurName = "Collantes",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -300,7 +312,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "4",
-                            SurName = "Mesa"
+                            SurName = "Mesa",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -312,7 +325,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "5",
-                            SurName = "Saltos"
+                            SurName = "Saltos",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -324,7 +338,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "6",
-                            SurName = "Uga"
+                            SurName = "Uga",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -336,7 +351,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "7",
-                            SurName = "Campusano"
+                            SurName = "Campusano",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -348,7 +364,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "1",
-                            SurName = "Salguero"
+                            SurName = "Salguero",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -360,7 +377,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "1",
-                            SurName = "Mesa"
+                            SurName = "Mesa",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -372,7 +390,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "1",
-                            SurName = "Comarca"
+                            SurName = "Comarca",
+                            TokenRecovery = ""
                         },
                         new
                         {
@@ -384,7 +403,8 @@ namespace Appoiment_API.Migrations
                             Password = "5s12JolyfpPW/omcfJAnfQ==",
                             Role = "med",
                             Speciality_id = "1",
-                            SurName = "Flor"
+                            SurName = "Flor",
+                            TokenRecovery = ""
                         });
                 });
 #pragma warning restore 612, 618

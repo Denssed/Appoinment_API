@@ -20,22 +20,40 @@ namespace Appoiment_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetMeds()
         {
-            return await _context.Users.ToListAsync();
+            var users = await _context.Users.ToListAsync();
+            var meds = users.Where(u => u.Role == "med").ToArray();
+            //Console.WriteLine(meds);
+            return meds;
         }
 
         //Get api/MedsController/:id
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetMedById(int id)
-        {
-            var med = await _context.Users.FindAsync();
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<User>> GetMedById(int id)
+        //{
+        //    var med = await _context.Users.FindAsync(id);
 
-            if (med == null)
+        //    if (med == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return med;
+        //}
+
+        //Get api/MedsController/:id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetMedBySpecialityId(int id)
+        {
+            var users = await _context.Users.ToListAsync();
+            var meds = users.Where(u => u.Speciality_id == id).ToArray();
+            if (meds == null)
             {
                 return NotFound();
             }
 
-            return med;
+            return meds;
         }
+
     }
 
 }

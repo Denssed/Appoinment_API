@@ -20,13 +20,13 @@ namespace Appoiment_API.Data
                 {
                     Id = 1,
                     Ci = 0991234567,
-                    Name = "William",
-                    SurName = "Shakespeare",
-                    Email = "W.Shake@gmail.com",
-                    Password = "password",
+                    Name = "Jeremy",
+                    SurName = "Rodriguez",
+                    Email = "rodriguezp.jeremy@gmail.com",
+                    Password = "5s12JolyfpPW/omcfJAnfQ==",
                     Age = 30,
                     Speciality_id = 0,
-                    Role = "patient",
+                    Role = "patient"
                 }, new User
                 {
                     Id = 2,
@@ -34,10 +34,10 @@ namespace Appoiment_API.Data
                     Name = "Frank",
                     SurName = "Campos",
                     Email = "F.Campos@gmail.com",
-                    Password = "password",
+                    Password = "5s12JolyfpPW/omcfJAnfQ==",
                     Speciality_id = 1,
                     Age = 30,
-                    Role = "med",
+                    Role = "med"
                 },
                  new User
                  {
@@ -46,10 +46,10 @@ namespace Appoiment_API.Data
                      Name = "Carlos",
                      SurName = "Celeste",
                      Email = "C.Celeste@gmail.com",
-                     Password = "password",
-                     Speciality_id = 0,
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 1,
                      Age = 30,
-                     Role = "admin",
+                     Role = "admin"
                  }, new User
                  {
                      Id = 4,
@@ -57,10 +57,120 @@ namespace Appoiment_API.Data
                      Name = "Sebastion",
                      SurName = "Ramos",
                      Email = "S.Ramos@gmail.com",
-                     Password = "password",
-                     Speciality_id = 0,
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 2,
                      Age = 30,
-                     Role = "patient",
+                     Role = "patient"
+                 }, new User
+                 {
+                     Id = 5,
+                     Ci = 0934985785,
+                     Name = "Alex",
+                     SurName = "Ramos",
+                     Email = "A.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 2,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 6,
+                     Ci = 0934985785,
+                     Name = "Marcelo",
+                     SurName = "Collantes",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 3,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 7,
+                     Ci = 0934985785,
+                     Name = "Felix",
+                     SurName = "Mesa",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 4,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 8,
+                     Ci = 0934985785,
+                     Name = "Paul",
+                     SurName = "Saltos",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 5,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 9,
+                     Ci = 0934985785,
+                     Name = "Ariana",
+                     SurName = "Uga",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 6,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 10,
+                     Ci = 0934985785,
+                     Name = "Melisa",
+                     SurName = "Campusano",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 7,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 11,
+                     Ci = 0934985785,
+                     Name = "Homero",
+                     SurName = "Salguero",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 1,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 12,
+                     Ci = 0934985785,
+                     Name = "Susana",
+                     SurName = "Mesa",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 1,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 13,
+                     Ci = 0934985785,
+                     Name = "Francisco",
+                     SurName = "Comarca",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 1,
+                     Age = 30,
+                     Role = "med"
+                 }, new User
+                 {
+                     Id = 14,
+                     Ci = 0934985785,
+                     Name = "Favio",
+                     SurName = "Flor",
+                     Email = "S.Ramos@gmail.com",
+                     Password = "5s12JolyfpPW/omcfJAnfQ==",
+                     Speciality_id = 1,
+                     Age = 30,
+                     Role = "med"
                  }
 
             );

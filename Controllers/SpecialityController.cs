@@ -1,12 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Appoiment_API.Data;
+using Appoiment_API.Data.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Appoiment_API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class SpecialityController : Controller
     {
-        public IActionResult Index()
+       
+        private readonly APIDbContext _context;
+
+        public SpecialityController(APIDbContext context)
         {
-            return View();
+            _context = context;
+        }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Speciality>>> GetSpecialities()
+        {
+            return await _context.Specialities.ToListAsync();
         }
     }
 }

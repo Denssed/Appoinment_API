@@ -27,17 +27,18 @@ namespace Appoiment_API.Controllers
             return await _context.Appoiments.ToListAsync();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Appoiment>> GetAppoiment(int  id)
-        {
-            var appoimnet =  await _context.Appoiments.FindAsync(id);
-            if (appoimnet == null)
-            {
-                return NotFound();
-            }
+        ////Get api/AppoimentController/:id
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Appoiment>> GetAppoiment(int  id)
+        //{
+        //    var appoimnet =  await _context.Appoiments.FindAsync(id);
+        //    if (appoimnet == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return appoimnet;
-        }
+        //    return appoimnet;
+        //}
 
         //Get api/PatientController/:id
         [HttpGet("{id}")]

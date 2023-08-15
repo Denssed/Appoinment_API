@@ -1,4 +1,5 @@
-﻿using Appoiment_API.Data;
+﻿using Appoiment_API.Controllers;
+using Appoiment_API.Data;
 using Appoiment_API.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Authenticator.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class LoginController : Controller
     {
@@ -41,9 +42,10 @@ namespace Authenticator.Controllers
 
         private User Authenticate(LoginUser userLogin)
         {
+            EncryptMD5 md5 = new EncryptMD5(_config);
             var currentUser = _context.Users.FirstOrDefault(
                 user => user.Email.ToLower() == userLogin.Email.ToLower()
-                && user.Password == userLogin.Password
+                && md5.Decryp(user.Password).ToLower() == userLogin.Password.ToLower()
                 ) ;
             if (currentUser != null) {
                 return currentUser;
@@ -60,7 +62,7 @@ namespace Authenticator.Controllers
 
             var claims = new[]
                     {
-                        new Claim(ClaimTypes.NameIdentifier, user.Email),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                         new Claim(ClaimTypes.Role, user.Role),
                     };
 
